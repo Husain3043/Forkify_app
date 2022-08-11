@@ -16,3 +16,16 @@ if (markHigherBMI) {
 } else {
     console.log(`John has higher BMI (${johnBMI}) than Mark (${markBMI})`);
 }
+
+
+// Coding challenge 3:
+//Test data 1 :
+const dolphinScoreAvg = (96 + 108 + 89) / 3;
+const koalasScoreAvg = (88 + 91 + 110) / 3;
+if (dolphinScoreAvg > koalasScoreAvg) {
+    console.log("Team Dolphin are the winners!!");
+} else if (dolphinScoreAvg < koalasScoreAvg) {
+    console.log("Team Koala are the winners!!");
+} else {
+    console.log("Competition tied!!");
+}
