@@ -41,3 +41,19 @@ const tipPercent3 = bill3 > 50 && bill3 < 300 ? 0.15 : 0.2;
 console.log(`The bill 1 was ${bill1}, the tip 1 was ${tipPercent1 * bill1} and the total value 1 ${bill1 + tipPercent1 * bill1}.`)
 console.log(`The bill 2 was ${bill2}, the tip 2 was ${tipPercent2 * bill2} and the total value 2 ${bill2 + tipPercent2 * bill2}.`)
 console.log(`The bill 3 was ${bill3}, the tip 3 was ${tipPercent3 * bill3} and the total value 3 ${bill3 + tipPercent3 * bill3}.`)
+
+//Coding challenge 5:
+const calcAverage = (num1, num2, num3) => (num1 + num2 + num3) / 3;
+const checkWinner = function (avgDolphins, avgKoalas) {
+    if (avgDolphins > 2 * avgKoalas) {
+        console.log(`Dolphins win ( ${avgDolphins} vs. ${avgKoalas} )`);
+    } else if (avgKoalas > 2 * avgDolphins) {
+        console.log(`Koalas win ( ${avgKoalas} vs. ${avgDolphins} )`);
+    } else {
+        console.log("No team wins!");
+    }
+};
+
+const avgDolphins = calcAverage(44, 23, 71); // Test data 1
+const avgKoalas = calcAverage(65, 54, 49);
+checkWinner(avgDolphins, avgKoalas);
