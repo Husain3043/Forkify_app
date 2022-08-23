@@ -57,3 +57,40 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 const avgDolphins = calcAverage(44, 23, 71); // Test data 1
 const avgKoalas = calcAverage(65, 54, 49);
 checkWinner(avgDolphins, avgKoalas);
+
+
+//Coding challenge 6:
+const calcTip = bill => bill > 50 && bill < 300 ? 0.15 * bill : 0.2 * bill;
+const billValues = [125, 555, 44];
+const tipValues = [];
+const totalValues = [];
+billValues.forEach((bill, index) => {
+    tipValues.push(calcTip(bill));
+    totalValues.push(tipValues[index] + bill);
+});
+console.log("Tip values: " + tipValues);
+console.log("Total values: " + totalValues);
+
+//Coding challenge 7:
+const markData = {
+    fullName: "Mark Miller",
+    weight: 78,
+    height: 1.69,
+    calcBMI: function () {
+        return this.BMI = this.weight / (this.height ** 2);
+    }
+}
+
+const johnData = {
+    fullName: "John Smith",
+    weight: 92,
+    height: 1.95,
+    calcBMI: function () {
+        return this.BMI = this.weight / (this.height ** 2);
+    }
+}
+if (markData.calcBMI() > johnData.calcBMI()) {
+    console.log(`${markData.fullName}'s BMI (${markData.BMI}) is higher than  ${johnData.fullName}'s (${johnData.BMI}).`)
+} else if (johnData.calcBMI() > markData.calcBMI()) {
+    console.log(`${johnData.fullName}'s BMI (${johnData.BMI}) is higher than  ${markData.fullName}'s (${markData.BMI}).`)
+}
