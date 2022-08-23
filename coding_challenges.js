@@ -59,17 +59,27 @@ const avgKoalas = calcAverage(65, 54, 49);
 checkWinner(avgDolphins, avgKoalas);
 
 
-//Coding challenge 6:
-const calcTip = bill => bill > 50 && bill < 300 ? 0.15 * bill : 0.2 * bill;
-const billValues = [125, 555, 44];
+//Coding challenge 6 & 8:
+const calcTip = bill => bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
+const billValues = [22, 295, 176, 440, 37, 105, 10, 110, 86, 52];
 const tipValues = [];
 const totalValues = [];
-billValues.forEach((bill, index) => {
-    tipValues.push(calcTip(bill));
-    totalValues.push(tipValues[index] + bill);
-});
+for (let i = 0; i < billValues.length; i++) {
+    tipValues.push(calcTip(billValues[i]));
+    totalValues.push(tipValues[i] + billValues[i]);
+}
 console.log("Tip values: " + tipValues);
 console.log("Total values: " + totalValues);
+
+//Challenge 8 specific:
+const calAvgArr = function (arr) {
+    let sum = 0;
+    for (i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+    }
+    return (sum / arr.length);
+}
+console.log("Avg function with array as argument, bill avg result : " + calAvgArr(billValues));
 
 //Coding challenge 7:
 const markData = {
@@ -94,3 +104,5 @@ if (markData.calcBMI() > johnData.calcBMI()) {
 } else if (johnData.calcBMI() > markData.calcBMI()) {
     console.log(`${johnData.fullName}'s BMI (${johnData.BMI}) is higher than  ${markData.fullName}'s (${markData.BMI}).`)
 }
+
+//Coding challenge 7:
